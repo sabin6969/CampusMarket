@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(brightness: Brightness.light),
-      initialRoute: "/login",
+      initialRoute: "/homepage",
       routes: {
         // "/login": (context) => const LoginScreen(),
         "/homePage":(context) => const HomePage(),
