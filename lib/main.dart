@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(brightness: Brightness.light),
       initialRoute: "/login",
       routes: {
-        "/login": (context) => const LoginScreen(),
+        // "/login": (context) => const LoginScreen(),
         "/homePage":(context) => const HomePage(),
       },
     );

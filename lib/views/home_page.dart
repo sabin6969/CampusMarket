@@ -10,6 +10,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(actions: [Icon(Icons.notifications)]),);
+    return Scaffold(
+      appBar: AppBar(
+        leading: const Icon(Icons.home),
+        actions: [IconButton(icon: const Icon(Icons.abc,),onPressed: () => ())]
+      ),
+    );
   }
 }
