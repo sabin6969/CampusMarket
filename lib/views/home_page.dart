@@ -1,7 +1,5 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,6 +13,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
           elevation: 0,
           backgroundColor: Color.fromARGB(226, 221, 221, 221),
@@ -130,8 +129,47 @@ class _NewArrivalState extends State<NewArrival> {
                 ]),
           ),
         ),
-
-        
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            decoration: BoxDecoration(),
+            width: MediaQuery.sizeOf(context).width,
+            child: Row(children: [
+              Card(
+                elevation: 1.5,
+                color: Colors.white,
+                child: Container(
+              decoration: BoxDecoration(borderRadius: BorderRadius.only  ( topLeft: Radius.circular(12),topRight:  Radius.circular(12))),
+                  width: MediaQuery.sizeOf(context).width*0.25,
+                  height: MediaQuery.sizeOf(context).height*0.2, 
+                  child: Column(
+                    
+                    children: [Container(
+                       decoration: BoxDecoration(
+                         color: const Color.fromARGB(255, 201, 201, 201),
+                        borderRadius: BorderRadius.all(Radius.circular(12))),
+                      width:MediaQuery.sizeOf(context).width*0.25 ,
+                     
+                      child: Icon(Icons.book_online_outlined,size: 80,color: Colors.purple,))
+                  ,
+              
+                    SizedBox(height: 10),
+                  Text("The psychology of \nmoney")
+                  ,SizedBox(height: 10)
+                  ,Padding(
+                    padding: const EdgeInsets.only(right: 80),
+                    child: Text("Books",style: TextStyle(color: Colors.grey),),
+                  ),SizedBox(height: 10)
+                  ,Padding(
+                    padding: const EdgeInsets.only(right: 80),
+                    child: Text("Rs 500",style: TextStyle(color: const Color.fromARGB(255, 0, 0, 0)),),
+                  )
+                  ]),
+                ),
+              ),
+            ]),
+          ),
+        )
       ]),
     );
   }
