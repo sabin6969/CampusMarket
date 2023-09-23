@@ -1,5 +1,6 @@
 import 'package:campusmarket/firebase_options.dart';
 import 'package:campusmarket/views/login_screen.dart';
+import 'package:campusmarket/views/my_account.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
