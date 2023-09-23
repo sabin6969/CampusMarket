@@ -1,4 +1,6 @@
+import 'package:campusmarket/views/forgot_password.dart';
 import 'package:campusmarket/views/login_screen.dart';
+import 'package:campusmarket/views/signup_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -24,6 +26,8 @@ class _MyAppState extends State<MyApp> {
       initialRoute: "/login",
       routes: {
         "/login": (context) => const LoginScreen(),
+        "/createaccount": (context) => const CreateAccount(),
+        "/forgotpassword": (context) => const ForgetPassword(),
       },
     );
   }

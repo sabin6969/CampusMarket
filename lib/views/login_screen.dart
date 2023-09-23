@@ -1,6 +1,5 @@
 import 'package:campusmarket/constants/colors.dart';
 import 'package:campusmarket/constants/text_styles.dart';
-import 'package:campusmarket/constants/validations.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:campusmarket/views/reusable_text_field.dart';
@@ -16,6 +15,14 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   GlobalKey<FormState> globalKey = GlobalKey<FormState>();
+
+  @override
+  void dispose() {
+    super.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.sizeOf(context);
@@ -37,9 +44,9 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 children: [
                   customTextFormField(
-                    true,
-                    "Enter your email",
-                    emailController,
+                    "email",
+                    "Enter your password",
+                    passwordController,
                     false,
                     const Icon(
                       Icons.email,
@@ -52,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 20,
                   ),
                   customTextFormField(
-                    false,
+                    "password",
                     "Enter your password",
                     passwordController,
                     true,
@@ -73,7 +80,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, "/forgotpassword");
+                        },
                         child: const Text(
                           "Forgot Password?",
                           style: TextStyle(
@@ -83,7 +92,12 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(
+                            context,
+                            "/createaccount",
+                          );
+                        },
                         child: const Text(
                           "New here?",
                           style: TextStyle(
@@ -123,7 +137,14 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                       const Text("Having trouble?"),
                       TextButton(
-                          onPressed: () {}, child: const Text("Contact us"))
+                          onPressed: () {},
+                          child: const Text(
+                            "Contact us",
+                            style: TextStyle(
+                              color: Colors.black,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ))
                     ],
                   )
                 ],
