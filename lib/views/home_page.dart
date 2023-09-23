@@ -226,7 +226,7 @@ class _DiscoverSectionState extends State<DiscoverSection> {
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("New people on this platform ,\n Add to your Chat",style: TextStyle(fontSize: 12),),
+                  Text("New people on this platform ,\n add to your chat",style: TextStyle(fontSize: 12),),
                   InkWell(
                     child: Text(
                       "See all",
@@ -253,6 +253,8 @@ class _DiscoverSectionState extends State<DiscoverSection> {
                 
                
               SizedBox(width: 25,),
+              DiscoverSectionCard(),
+                  SizedBox(width: 25,),
               DiscoverSectionCard()
            
             ]),
