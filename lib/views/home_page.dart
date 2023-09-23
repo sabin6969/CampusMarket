@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:campusmarket/views/cards/homepageCard.dart';
+import 'package:campusmarket/views/cards/newsCard.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -193,7 +194,8 @@ class _NewsSectionState extends State<NewsSection> {
             width: MediaQuery.sizeOf(context).width,
             child: Row(children: [
 
-             
+             SizedBox(height: 5,),
+             NewsCard()
               
             ]),
           ),
