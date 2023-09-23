@@ -1,4 +1,5 @@
-import 'package:campusmarket/views/login_screen.dart';
+//import 'package:campusmarket/views/login_screen.dart';
+import 'package:campusmarket/views/my_account.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -21,9 +22,10 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(brightness: Brightness.light),
-      initialRoute: "/login",
+      initialRoute: "/MyAccount",
       routes: {
-        "/login": (context) => const LoginScreen(),
+      //  "/login": (context) => const LoginScreen(),
+        "/MyAccount":(context) => const MyAccount(),
       },
     );
   }
