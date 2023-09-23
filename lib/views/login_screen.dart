@@ -1,3 +1,5 @@
+import 'package:campusmarket/constants/colors.dart';
+import 'package:campusmarket/constants/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:campusmarket/views/reusable_text_field.dart';
@@ -12,12 +14,21 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  GlobalKey<FormState> globalKey = GlobalKey<FormState>();
+
+  @override
+  void dispose() {
+    super.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.sizeOf(context);
     return Scaffold(
       body: Form(
+        key: globalKey,
         child: ListView(
           children: [
             SizedBox(
@@ -33,29 +44,109 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 children: [
                   customTextFormField(
-                    "Enter your email",
-                    emailController,
+                    "email",
+                    "Enter your password",
+                    passwordController,
                     false,
                     const Icon(
                       Icons.email,
                       color: Colors.black,
                     ),
+                    null,
+                    null,
                   ),
                   const SizedBox(
                     height: 20,
                   ),
                   customTextFormField(
-                      "Enter your password",
-                      passwordController,
-                      true,
-                      const Icon(
-                        Icons.lock,
-                        color: Colors.black,
+                    "password",
+                    "Enter your password",
+                    passwordController,
+                    true,
+                    const Icon(
+                      Icons.lock,
+                      color: Colors.black,
+                    ),
+                    null,
+                    const Icon(
+                      Icons.visibility,
+                      color: Colors.black,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, "/forgotpassword");
+                        },
+                        child: const Text(
+                          "Forgot Password?",
+                          style: TextStyle(
+                            decoration: TextDecoration.underline,
+                            color: Colors.black,
+                          ),
+                        ),
                       ),
-                      const Icon(
-                        Icons.visibility,
-                        color: Colors.black,
-                      )),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pushNamed(
+                            context,
+                            "/createaccount",
+                          );
+                        },
+                        child: const Text(
+                          "New here?",
+                          style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              color: Colors.black),
+                        ),
+                      )
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Checkbox(
+                        value: false,
+                        onChanged: (value) {},
+                      ),
+                      const Text("Remember Me")
+                    ],
+                  ),
+                  MaterialButton(
+                    height: size.height * 0.07,
+                    minWidth: size.width,
+                    shape: const StadiumBorder(),
+                    onPressed: () {
+                      if (globalKey.currentState!.validate()) {}
+                    },
+                    color: buttonColor,
+                    child: Text(
+                      "Login",
+                      style: buttonTextStyle,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text("Having trouble?"),
+                      TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            "Contact us",
+                            style: TextStyle(
+                              color: Colors.black,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ))
+                    ],
+                  )
                 ],
               ),
             ),
