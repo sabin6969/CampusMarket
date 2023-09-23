@@ -1,5 +1,6 @@
+// ignore_for_file: unused_import
+
 import 'package:campusmarket/firebase_options.dart';
-import 'package:campusmarket/views/home_page.dart';
 import 'package:campusmarket/views/home_page.dart';
 import 'package:campusmarket/views/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';

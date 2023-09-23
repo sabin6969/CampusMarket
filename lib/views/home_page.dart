@@ -147,7 +147,7 @@ class _NewArrivalState extends State<NewArrival> {
                     children: [Container(
                        decoration: BoxDecoration(
                          color: const Color.fromARGB(255, 201, 201, 201),
-                        borderRadius: BorderRadius.all(Radius.circular(12))),
+                        borderRadius: BorderRadius.only(topLeft: Radius.circular(12),topRight:Radius.circular(12),)),
                       width:MediaQuery.sizeOf(context).width*0.25 ,
                      
                       child: Icon(Icons.book_online_outlined,size: 80,color: Colors.purple,))
