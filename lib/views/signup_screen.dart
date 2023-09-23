@@ -1,5 +1,7 @@
 import 'package:campusmarket/constants/colors.dart';
 import 'package:campusmarket/constants/text_styles.dart';
+import 'package:campusmarket/controller/auth_controllers.dart';
+import 'package:campusmarket/utils/reusable_snackbar.dart';
 import 'package:campusmarket/views/reusable_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -18,6 +20,16 @@ class _CreateAccountState extends State<CreateAccount> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
   GlobalKey<FormState> globalKey = GlobalKey<FormState>();
+
+  @override
+  void dispose() {
+    super.dispose();
+    nameController.dispose();
+    emailController.dispose();
+    phoneController.dispose();
+    passwordController.dispose();
+    confirmPasswordController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -141,7 +153,26 @@ class _CreateAccountState extends State<CreateAccount> {
                       color: buttonColor,
                       shape: const StadiumBorder(),
                       onPressed: () {
-                        if (globalKey.currentState!.validate()) {}
+                        if (globalKey.currentState!.validate() &&
+                            confirmPasswordController.text
+                                    .compareTo(passwordController.text) ==
+                                0) {
+                          try {
+                            AuthController.createUserAccount(
+                              emailController.text,
+                              passwordController.text,
+                              context,
+                            );
+                            emailController.clear();
+                            passwordController.clear();
+                            nameController.clear();
+                            phoneController.clear();
+                            confirmPasswordController.clear();
+                          } catch (e) {
+                            ReusableSnackBar.showSnackBar(
+                                "An error occured", context);
+                          }
+                        } else {}
                       },
                       child: Text(
                         "Create Account",
