@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(brightness: Brightness.light),
       initialRoute: "/",
       routes: {
-        "/": (context) => HomePage(),
+        "/home": (context) => const HomePage(),
       },
     );
   }
