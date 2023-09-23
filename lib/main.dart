@@ -35,7 +35,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(brightness: Brightness.light),
-      initialRoute: "/home",
+      initialRoute: "/createaccount",
       routes: {
         "/myAccount": (context) => const MyAccount(),
         "/home": (context) => const HomePage(),
