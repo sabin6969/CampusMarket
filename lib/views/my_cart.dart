@@ -6,13 +6,13 @@ class MyCart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.white,
        appBar: AppBar(
-  centerTitle: true,
-  title: Text('AppBar'),
+  backgroundColor: Colors.grey,
+  title: Text('My Cart'),
   leading: IconButton(
     onPressed: () {},
-    icon: Icon(Icons.back_hand),
+    icon: Icon(Icons.backpack_outlined),
   ),
   actions: [
     IconButton(
