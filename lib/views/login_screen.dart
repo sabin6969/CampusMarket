@@ -1,5 +1,7 @@
 import 'package:campusmarket/constants/colors.dart';
 import 'package:campusmarket/constants/text_styles.dart';
+import 'package:campusmarket/controller/auth_controllers.dart';
+import 'package:campusmarket/utils/reusable_snackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:campusmarket/views/reusable_text_field.dart';
@@ -45,8 +47,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   customTextFormField(
                     "email",
-                    "Enter your password",
-                    passwordController,
+                    "Enter your email",
+                    emailController,
                     false,
                     const Icon(
                       Icons.email,
@@ -121,7 +123,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     minWidth: size.width,
                     shape: const StadiumBorder(),
                     onPressed: () {
-                      if (globalKey.currentState!.validate()) {}
+                      if (globalKey.currentState!.validate()) {
+                        try {
+                          AuthController.loginUser(emailController.text,
+                              passwordController.text, context);
+                        } catch (e) {
+                          ReusableSnackBar.showSnackBar(
+                              "An unkown error occured", context);
+                        }
+                      }
                     },
                     color: buttonColor,
                     child: Text(
