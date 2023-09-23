@@ -3,8 +3,8 @@ import 'package:campusmarket/views/chat_main.dart';
 import 'package:campusmarket/views/chat_page.dart';
 import 'package:campusmarket/views/forgot_password.dart';
 import 'package:campusmarket/views/login_screen.dart';
-import 'package:campusmarket/views/signup_screen.dart';
 import 'package:campusmarket/views/my_account.dart';
+import 'package:campusmarket/views/signup_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -32,9 +32,14 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(brightness: Brightness.light),
-      initialRoute: "/login",
+      initialRoute: "/chatList",
       routes: {
+        "/myAccount": (context) => const MyAccount(),
         "/login": (context) => const LoginScreen(),
+        "/createaccount": (context) => const CreateAccount(),
+        "/forgotpassword": (context) => const ForgetPassword(),
+        "/chatList": (context) => const ChatListPage(),
+        "/chatOne": (context) => const ChatPage(),
       },
     );
   }
