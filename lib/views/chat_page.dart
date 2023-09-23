@@ -17,30 +17,36 @@ class _ChatPageState extends State<ChatPage> {
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: true,
-          flexibleSpace: Row(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: SizedBox(
-                  height: 40,
+          flexibleSpace: Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Row(
+              children: [
+                SizedBox(
                   width: 40,
-                  child: Image.network(
-                    'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                    fit: BoxFit.cover,
+                ),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: SizedBox(
+                    height: 40,
+                    width: 40,
+                    child: Image.network(
+                      'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Text(
-                'Rohana',
-                style: TextStyle(
-                  fontSize: 17,
-                  fontWeight: FontWeight.bold,
+                SizedBox(
+                  width: 10,
                 ),
-              ),
-            ],
+                Text(
+                  'Rohana',
+                  style: TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
         body: Column(
@@ -75,7 +81,27 @@ class _ChatPageState extends State<ChatPage> {
                       ),
                       border: Border.all(),
                     ),
-                    child: TextField(),
+                    child: Stack(
+                      children: [
+                        TextField(
+                          decoration: InputDecoration(
+                            hintText: '  Write your message...',
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Row(
+                            children: [
+                              Icon(Icons.photo),
+                              Icon(Icons.camera_alt_outlined),
+                              SizedBox(
+                                width: 50,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   IconButton(
                     onPressed: () {},

@@ -38,9 +38,14 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(brightness: Brightness.light),
-      initialRoute: "/login",
+      theme: ThemeData(
+          brightness: Brightness.light,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Color.fromARGB(255, 197, 191, 191),
+          )),
+      initialRoute: "/chatOne",
       routes: {
+        "/login": (context) => const LoginScreen(),
         "/myAccount": (context) => const MyAccount(),
         "/home": (context) => const HomePage(),
         "/createaccount": (context) => const CreateAccount(),
