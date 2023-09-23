@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:campusmarket/views/cards/discovercard.dart';
 import 'package:campusmarket/views/cards/homepageCard.dart';
 import 'package:campusmarket/views/cards/newsCard.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +40,8 @@ class _HomePageState extends State<HomePage> {
       body: Column(children: [
         TopSection(),
         NewArrival(),
-        NewsSection()
+        NewsSection(),
+        DiscoverSection()
       ]),
     );
   }
@@ -190,11 +192,12 @@ class _NewsSectionState extends State<NewsSection> {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
+
             decoration: BoxDecoration(),
             width: MediaQuery.sizeOf(context).width,
-            child: Row(children: [
+            child: Column(children: [
 
-             SizedBox(height: 5,),
+  
              NewsCard()
               
             ]),
@@ -204,3 +207,61 @@ class _NewsSectionState extends State<NewsSection> {
     );
   }
 }
+
+class DiscoverSection extends StatefulWidget {
+  const DiscoverSection({super.key});
+
+  @override
+  State<DiscoverSection> createState() => _DiscoverSectionState();
+}
+
+class _DiscoverSectionState extends State<DiscoverSection> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(children: [
+        Container(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("New people on this platform ,\n Add to your Chat",style: TextStyle(fontSize: 12),),
+                  InkWell(
+                    child: Text(
+                      "See all",
+                      style: TextStyle(decoration: TextDecoration.underline),
+                    ),
+                    onTap: () => (),
+                  ),
+                ]),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            decoration: BoxDecoration(),
+            width: MediaQuery.sizeOf(context).width,
+            child: Row(children: [
+
+              SizedBox(width: 15,),
+              DiscoverSectionCard(),
+            
+            
+                SizedBox(width: 25,),
+                DiscoverSectionCard(),
+                
+               
+              SizedBox(width: 25,),
+              DiscoverSectionCard()
+           
+            ]),
+          ),
+        )
+      ]),
+    );
+  }
+}
+
+
+
