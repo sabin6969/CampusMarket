@@ -1,4 +1,7 @@
+// ignore_for_file: unused_import
+
 import 'package:campusmarket/firebase_options.dart';
+import 'package:campusmarket/views/home_page.dart';
 import 'package:campusmarket/views/chat_main.dart';
 import 'package:campusmarket/views/chat_page.dart';
 import 'package:campusmarket/views/forgot_password.dart';
@@ -35,7 +38,7 @@ class _MyAppState extends State<MyApp> {
       initialRoute: "/myAccount",
       routes: {
         "/myAccount": (context) => const MyAccount(),
-        "/login": (context) => const LoginScreen(),
+        "/": (context) => HomePage(),
         "/createaccount": (context) => const CreateAccount(),
         "/forgotpassword": (context) => const ForgetPassword(),
         "/chatList": (context) => const ChatListPage(),
