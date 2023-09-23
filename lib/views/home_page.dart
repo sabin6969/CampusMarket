@@ -1,5 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:campusmarket/views/cards/discovercard.dart';
+import 'package:campusmarket/views/cards/homepageCard.dart';
+import 'package:campusmarket/views/cards/newsCard.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -37,6 +40,8 @@ class _HomePageState extends State<HomePage> {
       body: Column(children: [
         TopSection(),
         NewArrival(),
+        NewsSection(),
+        DiscoverSection()
       ]),
     );
   }
@@ -135,38 +140,18 @@ class _NewArrivalState extends State<NewArrival> {
             decoration: BoxDecoration(),
             width: MediaQuery.sizeOf(context).width,
             child: Row(children: [
-              Card(
-                elevation: 1.5,
-                color: Colors.white,
-                child: Container(
-              decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(12))),
-                  width: MediaQuery.sizeOf(context).width*0.25,
-                  height: MediaQuery.sizeOf(context).height*0.2, 
-                  child: Column(
-                    
-                    children: [Container(
-                       decoration: BoxDecoration(
-                         color: Color.fromARGB(255, 232, 230, 230),
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(12),topRight:Radius.circular(12),)),
-                      width:MediaQuery.sizeOf(context).width*0.25 ,
-                     
-                      child: Icon(Icons.book_online_outlined,size: 80,color: Colors.purple,))
-                  ,
+
+              SizedBox(width: 15,),
+
+              HomeCard(),
+            
+                SizedBox(width: 25,),
+                HomeCard(),
               
-                    SizedBox(height: 10),
-                  Text("The psychology of \nmoney")
-                  ,SizedBox(height: 10)
-                  ,Padding(
-                    padding: const EdgeInsets.only(right: 80),
-                    child: Text("Books",style: TextStyle(color: Colors.grey),),
-                  ),SizedBox(height: 10)
-                  ,Padding(
-                    padding: const EdgeInsets.only(right: 80),
-                    child: Text("Rs 500",style: TextStyle(color: const Color.fromARGB(255, 0, 0, 0)),),
-                  )
-                  ]),
-                ),
-              ),
+               
+              SizedBox(width: 25,),
+              HomeCard()
+              
             ]),
           ),
         )
@@ -174,3 +159,111 @@ class _NewArrivalState extends State<NewArrival> {
     );
   }
 }
+
+class NewsSection extends StatefulWidget {
+  const NewsSection({super.key});
+
+  @override
+  State<NewsSection> createState() => _NewsSectionState();
+}
+
+class _NewsSectionState extends State<NewsSection> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(children: [
+        Container(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Latest news"),
+                  InkWell(
+                    child: Text(
+                      "See all",
+                      style: TextStyle(decoration: TextDecoration.underline),
+                    ),
+                    onTap: () => (),
+                  ),
+                ]),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+
+            decoration: BoxDecoration(),
+            width: MediaQuery.sizeOf(context).width,
+            child: Column(children: [
+
+  
+             NewsCard()
+              
+            ]),
+          ),
+        )
+      ]),
+    );
+  }
+}
+
+class DiscoverSection extends StatefulWidget {
+  const DiscoverSection({super.key});
+
+  @override
+  State<DiscoverSection> createState() => _DiscoverSectionState();
+}
+
+class _DiscoverSectionState extends State<DiscoverSection> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(children: [
+        Container(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("New people on this platform ,\n add to your chat",style: TextStyle(fontSize: 12),),
+                  InkWell(
+                    child: Text(
+                      "See all",
+                      style: TextStyle(decoration: TextDecoration.underline),
+                    ),
+                    onTap: () => (),
+                  ),
+                ]),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            decoration: BoxDecoration(),
+            width: MediaQuery.sizeOf(context).width,
+            child: Row(children: [
+
+              SizedBox(width: 15,),
+              DiscoverSectionCard(),
+            
+            
+                SizedBox(width: 25,),
+                DiscoverSectionCard(),
+                
+               
+              SizedBox(width: 25,),
+              DiscoverSectionCard(),
+                  SizedBox(width: 25,),
+              DiscoverSectionCard()
+           
+            ]),
+          ),
+        )
+      ]),
+    );
+  }
+}
+
+
+

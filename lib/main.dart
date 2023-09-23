@@ -46,6 +46,7 @@ class _MyAppState extends State<MyApp> {
         "/login": (context) => const LoginScreen(),
         "/myAccount": (context) => const MyAccount(),
         "/home": (context) => const HomePage(),
+        "/home": (context) => const HomePage(),
         "/createaccount": (context) => const CreateAccount(),
         "/forgotpassword": (context) => const ForgetPassword(),
         "/chatList": (context) => const ChatListPage(),
