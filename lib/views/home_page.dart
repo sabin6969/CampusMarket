@@ -139,14 +139,14 @@ class _NewArrivalState extends State<NewArrival> {
                 elevation: 1.5,
                 color: Colors.white,
                 child: Container(
-              decoration: BoxDecoration(borderRadius: BorderRadius.only  ( topLeft: Radius.circular(12),topRight:  Radius.circular(12))),
+              decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(12))),
                   width: MediaQuery.sizeOf(context).width*0.25,
                   height: MediaQuery.sizeOf(context).height*0.2, 
                   child: Column(
                     
                     children: [Container(
                        decoration: BoxDecoration(
-                         color: const Color.fromARGB(255, 201, 201, 201),
+                         color: Color.fromARGB(255, 232, 230, 230),
                         borderRadius: BorderRadius.only(topLeft: Radius.circular(12),topRight:Radius.circular(12),)),
                       width:MediaQuery.sizeOf(context).width*0.25 ,
                      
