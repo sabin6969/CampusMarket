@@ -13,6 +13,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(Icons.home),
+        title:const Text("CollegeShop",style: TextStyle(fontWeight: FontWeight.w600),),
         actions: [IconButton(icon: const Icon(Icons.abc,),onPressed: () => ())]
       ),
     );
