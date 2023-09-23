@@ -1,4 +1,6 @@
 import 'package:campusmarket/firebase_options.dart';
+import 'package:campusmarket/views/chat_main.dart';
+import 'package:campusmarket/views/chat_page.dart';
 import 'package:campusmarket/views/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -27,9 +29,11 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(brightness: Brightness.light),
-      initialRoute: "/login",
+      initialRoute: "/chatList",
       routes: {
         "/login": (context) => const LoginScreen(),
+        "/chatList": (context) => const ChatListPage(),
+        "/chatOne": (context) => const ChatPage(),
       },
     );
   }
