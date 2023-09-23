@@ -1,4 +1,6 @@
+import 'package:campusmarket/views/add_new_product.dart';
 import 'package:campusmarket/views/login_screen.dart';
+import 'package:campusmarket/views/view_product.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +27,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(brightness: Brightness.light),
       initialRoute: "/login",
       routes: {
-        "/login": (context) => const LoginScreen(),
+        "/login": (context) => const AddProduct(),
       },
     );
   }
