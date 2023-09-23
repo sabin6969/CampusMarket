@@ -8,6 +8,8 @@ void main() async {
   runApp(const MyApp());
 }
 
+late Size mq;
+
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
