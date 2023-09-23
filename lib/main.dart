@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(brightness: Brightness.light),
-      initialRoute: "/chatList",
+      initialRoute: "/myAccount",
       routes: {
         "/myAccount": (context) => const MyAccount(),
         "/login": (context) => const LoginScreen(),
