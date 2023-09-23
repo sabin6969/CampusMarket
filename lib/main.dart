@@ -47,6 +47,8 @@ class _MyAppState extends State<MyApp> {
         "/forgotpassword": (context) => const ForgetPassword(),
         "/chatList": (context) => const ChatListPage(),
         "/chatOne": (context) => const ChatPage(),
+        "/viewProduct": (context) => const ViewProduct(),
+        "/addProduct": (context) => const AddProduct(),
       },
     );
   }
