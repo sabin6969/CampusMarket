@@ -38,6 +38,7 @@ class _HomePageState extends State<HomePage> {
       body: Column(children: [
         TopSection(),
         NewArrival(),
+        NewsSection()
       ]),
     );
   }
@@ -147,6 +148,52 @@ class _NewArrivalState extends State<NewArrival> {
                
               SizedBox(width: 25,),
               HomeCard()
+              
+            ]),
+          ),
+        )
+      ]),
+    );
+  }
+}
+
+class NewsSection extends StatefulWidget {
+  const NewsSection({super.key});
+
+  @override
+  State<NewsSection> createState() => _NewsSectionState();
+}
+
+class _NewsSectionState extends State<NewsSection> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(children: [
+        Container(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Latest news"),
+                  InkWell(
+                    child: Text(
+                      "See all",
+                      style: TextStyle(decoration: TextDecoration.underline),
+                    ),
+                    onTap: () => (),
+                  ),
+                ]),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            decoration: BoxDecoration(),
+            width: MediaQuery.sizeOf(context).width,
+            child: Row(children: [
+
+             
               
             ]),
           ),
