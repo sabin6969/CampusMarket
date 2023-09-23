@@ -1,6 +1,7 @@
-import 'package:campusmarket/views/login_screen.dart';
+// import 'package:campusmarket/views/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:campusmarket/views/my_cart.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,10 +22,11 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(brightness: Brightness.light),
-      initialRoute: "/login",
+      initialRoute: "/mycart",
       routes: {
-        "/login": (context) => const LoginScreen(),
+        "/mycart": (context) => const MyCart(),
       },
+
     );
   }
 }
