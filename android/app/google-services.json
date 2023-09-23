@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "412258060615",
+    "project_id": "campusmarket-bfb77",
+    "storage_bucket": "campusmarket-bfb77.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412258060615:android:b823f2c700d88047d3e462",
+        "android_client_info": {
+          "package_name": "com.example.campusmarket"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHrRtZIBtM_byb0KgTeNr4IkRFdC5KFlk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
