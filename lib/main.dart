@@ -5,9 +5,11 @@ import 'package:campusmarket/views/home_page.dart';
 import 'package:campusmarket/views/chat_main.dart';
 import 'package:campusmarket/views/chat_page.dart';
 import 'package:campusmarket/views/forgot_password.dart';
+import 'package:campusmarket/views/add_new_product.dart';
 import 'package:campusmarket/views/login_screen.dart';
 import 'package:campusmarket/views/my_account.dart';
 import 'package:campusmarket/views/signup_screen.dart';
+import 'package:campusmarket/views/view_product.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +23,8 @@ void main() async {
 
   runApp(const MyApp());
 }
+
+late Size mq;
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
