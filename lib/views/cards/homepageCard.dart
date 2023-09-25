@@ -14,7 +14,10 @@ class _HomeCardState extends State<HomeCard> {
   @override
   Widget build(BuildContext context) {
     return CustomCardWidget(
-      cardImage: Image.asset("asset/images/elon.jpeg"),
+      
+      cardWidth: MediaQuery.sizeOf(context).width * 0.25,
+      cardHeight:  MediaQuery.sizeOf(context).height *0.22, 
+      cardImage: Image.asset("asset/images/elon.jpeg",width: 120,),
     
       titleText: "The psychology of money",
       subTitleText: 'Books',
