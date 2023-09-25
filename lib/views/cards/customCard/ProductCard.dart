@@ -7,7 +7,7 @@ class CustomCardWidget extends StatelessWidget {
   final Image cardImage;
   final String priceTitle;
 
-  final Icon cardIcon;
+
 
   const CustomCardWidget({
     super.key,
@@ -15,7 +15,7 @@ class CustomCardWidget extends StatelessWidget {
     required this.subTitleText,
     required this.cardImage,
     required this.priceTitle,
-    required this.cardIcon,
+   
   });
 
   @override
@@ -26,10 +26,7 @@ class CustomCardWidget extends StatelessWidget {
       child: Card(
           child: Column(
         children: [
-          Icon(
-            cardIcon,
-            size: 100,
-          ),
+         cardImage,
           const SizedBox(
             height: 12,
           ),

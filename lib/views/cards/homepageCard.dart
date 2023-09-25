@@ -15,7 +15,7 @@ class _HomeCardState extends State<HomeCard> {
   Widget build(BuildContext context) {
     return CustomCardWidget(
       cardImage: Image.asset("asset/images/elon.jpeg"),
-      cardIcon:Icon(Icons.book,size: 100,),
+    
       titleText: "The psychology of money",
       subTitleText: 'Books',
       priceTitle: 'Rs.500',
