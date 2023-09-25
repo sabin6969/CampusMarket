@@ -37,12 +37,14 @@ class _HomePageState extends State<HomePage> {
                 ),
                 onPressed: () => ())
           ]),
-      body: Column(children: [
-        TopSection(),
-        NewArrival(),
-        NewsSection(),
-        DiscoverSection()
-      ]),
+      body: SingleChildScrollView(
+        child: Column(children: [
+          TopSection(),
+          NewArrival(),
+          NewsSection(),
+          DiscoverSection()
+        ]),
+      ),
     );
   }
 }
