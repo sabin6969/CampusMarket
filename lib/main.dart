@@ -1,10 +1,9 @@
-// ignore_for_file: unused_import
 
-import 'package:campusmarket/firebase_options.dart';
-import 'package:campusmarket/views/home_page.dart';
 import 'package:campusmarket/views/chat_main.dart';
 import 'package:campusmarket/views/chat_page.dart';
+import 'package:campusmarket/views/firebase_options.dart';
 import 'package:campusmarket/views/forgot_password.dart';
+import 'package:campusmarket/views/home_page.dart';
 import 'package:campusmarket/views/login_screen.dart';
 import 'package:campusmarket/views/my_account.dart';
 import 'package:campusmarket/views/signup_screen.dart';
